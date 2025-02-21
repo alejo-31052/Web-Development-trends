@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+    <header>
+        <h1>Habit Tracker</h1>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+    </header>
+    
+    <main>
+        <section id="authForm">
+            <h2>Sign Up / Login</h2>
+            <input type="email" id="emailInput" placeholder="Enter your email">
+            <input type="password" id="passwordInput" placeholder="Enter your password">
+            <button id="signUpBtn">Sign Up</button>
+            <button id="loginBtn">Login</button>
+        </section>
+        
+        <section id="habitForm" style="display:none;">
+            <h2>Add a Habit</h2>
+            <input type="text" id="habitInput" placeholder="Enter a habit...">
+            <button id="addHabitBtn">Add Habit</button>
+        </section>
+        
+        <section id="habitList">
+            <h2>Your Habits</h2>
+            <ul id="habits"></ul>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Habit Tracker. All Rights Reserved.</p>
+    </footer>
+    
+    <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
+
+<script>
+    // Wait until Firebase is fully loaded before initializing
+    document.addEventListener("DOMContentLoaded", function () {
+        console.log("✅ Firebase SDK script loaded.");
+        
+        // Ensure Firebase is available before initializing
+        if (typeof firebase !== "undefined") {
+            console.log("✅ Firebase is defined, initializing...");
+            const firebaseConfig = {
+                apiKey: "AIzaSyB3LdNk53-V_ip48RjEFC0_x0Kcxeg2GwE",
+                authDomain: "web-trends-lab.firebaseapp.com",
+                databaseURL: "https://web-trends-lab-default-rtdb.firebaseio.com",
+                projectId: "web-trends-lab",
+                storageBucket: "web-trends-lab.appspot.com",
+                messagingSenderId: "219562350641",
+                appId: "1:219562350641:web:e4330f4d2a9389dc4c5d10",
+                measurementId: "G-1CWMCG24XC"
+            };
+            firebase.initializeApp(firebaseConfig);
+            console.log("✅ Firebase initialized successfully.");
+        } else {
+            console.error("❌ Firebase is NOT defined. Check script loading order.");
+        }
+    });
+</script>
+
+<!-- Load script.js AFTER Firebase is initialized -->
+<script src="script.js"></script>
+
+
+</body>
+</html>
