@@ -1,3 +1,5 @@
+console.log("The git website is updating the code.")
+
 // Ensure Firebase is loaded before using it
 // Ensure Firebase is loaded before using it
 document.addEventListener("DOMContentLoaded", function () {
