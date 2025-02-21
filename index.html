@@ -43,12 +43,15 @@
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
-<script>
-    // Ensure Firebase is available before using it
-    document.addEventListener("DOMContentLoaded", function () {
-        console.log("✅ Firebase SDK script loaded.");
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js"></script>
 
-        // Check if Firebase is loaded
+<script>
+    setTimeout(() => {
+        console.log("⏳ Attempting to initialize Firebase...");
+
         if (typeof firebase !== "undefined") {
             console.log("✅ Firebase is defined, initializing...");
             const firebaseConfig = {
@@ -62,14 +65,17 @@
                 measurementId: "G-1CWMCG24XC"
             };
 
-            // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
             console.log("✅ Firebase initialized successfully.");
         } else {
             console.error("❌ Firebase is NOT defined. Check script loading order.");
         }
-    });
+    }, 3000); // Wait 3 seconds before initializing
 </script>
+
+<!-- Load script.js AFTER Firebase -->
+<script src="script.js" defer></script>
+
 
 <!-- Load script.js AFTER Firebase -->
 <script src="script.js" defer></script>
