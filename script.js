@@ -1,15 +1,15 @@
 // Ensure Firebase is loaded before using it
+// Ensure Firebase is loaded before using it
 document.addEventListener("DOMContentLoaded", function () {
-    if (typeof firebase === 'undefined') {
+    if (typeof firebase === "undefined") {
         console.error("❌ Firebase SDK not loaded. Check your script order in index.html.");
     } else {
         console.log("✅ Firebase SDK loaded successfully.");
 
-        // Firebase references (Must be accessed AFTER Firebase is initialized)
-        const db = firebase.database();
+        // Initialize Firebase Auth & Database
         const auth = firebase.auth();
-
-        console.log("✅ Firebase Database and Auth initialized.");
+        const db = firebase.database();
+        console.log("✅ Firebase Auth and Database initialized.");
     }
 });
 
